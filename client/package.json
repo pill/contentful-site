@@ -1,7 +1,8 @@
 {
-  "name": "client",
+  "name": "phils-site",
   "version": "1.0.0",
-  "description": "",
+  "repository": "https://github.com/pill/contentful-site",
+  "description": "My Contentful powered site",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch",
@@ -13,9 +14,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.2",
     "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
@@ -25,10 +29,12 @@
     "prop-types": "^15.7.2",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-middleware": "^3.7.0",
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "axios": "^0.19.0",
+    "contentful": "^7.8.1",
+    "dotenv-webpack": "^1.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
