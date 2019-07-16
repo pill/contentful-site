@@ -1,2 +1,8 @@
-/client/.env
+# global
+.env
+.DS_Store
+
+# client
 /client/node_modules
+
+# server

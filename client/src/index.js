@@ -1,15 +1,21 @@
 import client from './api'
-console.log("hello", process.env.API_BASE_URL, client);
+import React, { Component } from "react"
+import MainContainer from './components/MainContainer'
+import ReactDOM from "react-dom"
 
 const q = {
   content_type: 'post'
 }
 
-const entries = client.getEntries(q).then((res) => {
+// just a contentful test...
+const entries = client.getEntries(q)
+  .then((res) => {
     console.log(res)
     res.items.map((item) => {
       console.log(item.fields.title)
     })
-  })
-  .catch(e=>console.log('error',e))
+})
+.catch(e=>console.log('error',e))
 
+const wrapper = document.getElementById("main-site")
+wrapper ? ReactDOM.render(<MainContainer />, wrapper) : false
