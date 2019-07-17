@@ -16,7 +16,9 @@ module.exports = {
   target: 'web',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist'
+    port: 3000,
+    // contentBase: './dist',
+    historyApiFallback: true
   },
   output: {
     path: __dirname + '/dist',

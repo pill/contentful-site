@@ -1,13 +1,11 @@
 import React, { Component } from "react"
 
-function Navigation() {
+export default () => {
   return (
     <div>
-      <a href="home">home</a>
+      <a href="blog">blog</a>
       &nbsp;
       <a href="work">work</a>
     </div>
   )
 }
-
-export default Navigation
