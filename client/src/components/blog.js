@@ -8,7 +8,7 @@ export default function Blog() {
     const fetchData = async () => {
       const q = { content_type: 'post' }
       const entries = await client.getEntries(q)
-
+      console.log('entries', entries)
       setData(entries)
     }
     fetchData()
@@ -21,7 +21,9 @@ export default function Blog() {
         data.items
           ? <ul>
               {data.items.map(item => (
-                <li key={item.fields.slug}>{item.fields.title}</li>
+                <li key={item.fields.slug}>
+                  <a href={'/post/'+item.sys.id}>{item.fields.title}</a>
+                </li>
               ))}
             </ul>
           : <em>Loading...</em>

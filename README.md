@@ -27,11 +27,14 @@ npm run start
 
 ## Install Server
 
+_NOTE: server currently not used_
+
 ### pyenv and pipenv
 
 https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c
 
-https://github.com/pyenv/pyenv/issues/1219
+
+Fix zlib: https://github.com/pyenv/pyenv/issues/1219
 ```
 sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 ```

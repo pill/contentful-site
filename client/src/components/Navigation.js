@@ -3,9 +3,9 @@ import React, { Component } from "react"
 export default () => {
   return (
     <div>
-      <a href="blog">blog</a>
+      <a href="/blog">blog</a>
       &nbsp;
-      <a href="work">work</a>
+      <a href="/work">work</a>
     </div>
   )
 }

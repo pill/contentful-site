@@ -4,6 +4,7 @@ import Blog from "./blog"
 import Work from "./work"
 import Navigation from "./navigation"
 import Footer from "./footer"
+import Post from "./post"
 
 class MainContainer extends Component {
 
@@ -15,9 +16,15 @@ class MainContainer extends Component {
     let res = []
     res.push(<Navigation key="nav" />)
 
-    switch(this.getSection()) {
+    const parts = this.getPathParts()
+    const section = parts.length > 0 ? parts[0] : ''
+
+    switch(section) {
       case 'work':
         res.push(<Work key="work" />)
+        break
+      case 'post':
+        res.push(<Post key="post" id={parts[1]} />)
         break
       case 'blog':
       default:
@@ -27,17 +34,16 @@ class MainContainer extends Component {
     res.push(<Footer key="footer" />)
 
     return <div>{res}</div>
-
   }
 
   /**
    * Return section of the site you are on from current url
    */
-  getSection() {
+  getPathParts() {
     const parsedUrl = new URL(window.location.href)
     console.log('url', parsedUrl)
     const paths = parsedUrl.pathname.split('/').filter(p => p.length > 0)
-    return paths.length > 0 ? paths[0] : ''
+    return paths
   }
 
 }
