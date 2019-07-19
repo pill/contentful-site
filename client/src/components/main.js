@@ -19,25 +19,26 @@ class MainContainer extends Component {
     const parts = this.getPathParts()
     const section = parts.length > 0 ? parts[0] : ''
 
+    let middle = null
     switch(section) {
       case 'work':
-        res.push(<Work key="work" />)
+        middle = <Work key="work"/>
         break
       case 'post':
-        res.push(<Post key="post" id={parts[1]} />)
+        middle = <Post key="post" id={parts[1]} />
         break
       case 'blog':
       default:
-        res.push(<Blog key="blog" />)
+        middle = <Blog key="blog" />
     }
-
+    res.push(middle)
     res.push(<Footer key="footer" />)
 
     return <div>{res}</div>
   }
 
   /**
-   * Return section of the site you are on from current url
+   * Return parts of the path from url
    */
   getPathParts() {
     const parsedUrl = new URL(window.location.href)
