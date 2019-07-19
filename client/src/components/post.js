@@ -1,5 +1,6 @@
 import React, {useEffect, useState}  from "react"
 import client from "../api"
+import ReactMarkdown from 'react-markdown'
 
 export default function Post(props) {
 
@@ -17,8 +18,15 @@ export default function Post(props) {
 
   return (
     <div>
-      <h1>Post</h1>
-      <div>{props.id}</div>
+      {
+        !entry
+          ? <em>Loading...</em>
+          : <div>
+              <h1>{entry.fields.title}</h1>
+              <div><em>by {entry.fields.author.fields.name}</em></div>
+              <div><ReactMarkdown source={entry.fields.body} /></div>
+            </div>
+      }
     </div>
   )
 }

@@ -18,15 +18,15 @@ export default function Blog() {
     <div>
       <h1>Blog</h1>
       {
-        data.items
-          ? <ul>
+        !data.items
+          ? <em>Loading...</em>
+          : <ul>
               {data.items.map(item => (
                 <li key={item.fields.slug}>
                   <a href={'/post/'+item.sys.id}>{item.fields.title}</a>
                 </li>
               ))}
             </ul>
-          : <em>Loading...</em>
       }
     </div>
   )
