@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import ReactDOM from "react-dom"
 import Blog from "./blog"
 import Work from "./work"
-import Navigation from "./navigation"
+import Navigation from "./nav"
 import Footer from "./footer"
 import Post from "./post"
 
