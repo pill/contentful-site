@@ -29,6 +29,13 @@ npm run start
 
 _NOTE: server currently not used_
 
+## run server
+
+```
+pipenv run server
+```
+
+
 ### pyenv and pipenv
 
 https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c

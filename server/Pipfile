@@ -11,7 +11,7 @@ contentful = "*"
 python-dotenv = "*"
 
 [scripts]
-server = "python main.py"
+server = "python app/main.py"
 
 [requires]
 python_version = "3.6"
