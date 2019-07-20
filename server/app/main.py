@@ -17,4 +17,4 @@ async def catch_all(request, path=''):
     return await response.file(client_path + '/index.html')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000)
+    app.run(host="0.0.0.0", port=3030)
