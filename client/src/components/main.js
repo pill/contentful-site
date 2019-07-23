@@ -15,10 +15,10 @@ class MainContainer extends Component {
 
   render() {
     let res = []
-    res.push(<Navigation key="nav" />)
-
     const parts = this.getPathParts()
     const section = parts.length > 0 ? parts[0] : ''
+
+    res.push(<Navigation key="nav" section={section} />)
 
     let middle = null
     switch(section) {

@@ -17,8 +17,6 @@ export default function Post(props) {
     fetchData()
   }, [])
 
-
-
   return (
     <div>
       {
@@ -29,6 +27,14 @@ export default function Post(props) {
               <div>{moment(entry.sys.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</div>
               <div><em>by {entry.fields.author.fields.name}</em></div>
               <div><ReactMarkdown source={entry.fields.body} /></div>
+              <div>
+                Tags:
+                {
+                  entry.fields.tags.map(tag => {
+                    return <div key={tag.fields.slug}>{tag.fields.text}</div>
+                  })
+                }
+              </div>
             </div>
       }
     </div>
