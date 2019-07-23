@@ -1,15 +1,16 @@
 import React, {useEffect, useState}  from "react"
-import client from "../api"
+import client from "../../api"
+import useBlog from './useBlog'
 
 export default function Blog() {
-  const [data, setData] = useState({ entries: [] })
+  const { setEntryList, entryList } = useBlog()
 
   useEffect(() => {
     const fetchData = async () => {
       const q = { content_type: 'post' }
-      const entries = await client.getEntries(q)
-      console.log('entries', entries)
-      setData(entries)
+      const res = await client.getEntries(q)
+      console.log('entries res', res)
+      setEntryList(res.items)
     }
     fetchData()
   }, [])
@@ -18,10 +19,10 @@ export default function Blog() {
     <div>
       <h1>Blog</h1>
       {
-        !data.items
+        !entryList.length
           ? <em>Loading...</em>
           : <ul>
-              {data.items.map(item => (
+              {entryList.map(item => (
                 <li key={item.fields.slug}>
                   <a href={'/post/'+item.sys.id}>{item.fields.title}</a>
                 </li>

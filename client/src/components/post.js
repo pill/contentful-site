@@ -2,14 +2,11 @@ import React, {useEffect, useState, useContext}  from "react"
 import client from "../api"
 import ReactMarkdown from 'react-markdown'
 import * as moment from 'moment'
-import { BlogContext } from './blogContext'
+import useBlog from './blog/useBlog'
 
 export default function Post(props) {
 
-  // local
-  const [entry, setEntry] = useState(null)
-  // global
-  const [state, setState] = useContext(BlogContext)
+  const { entry, setEntry } = useBlog()
 
   useEffect(() => {
     const fetchData = async () => {

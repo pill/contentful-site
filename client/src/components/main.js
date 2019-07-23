@@ -5,6 +5,7 @@ import Work from "./work"
 import Navigation from "./nav"
 import Footer from "./footer"
 import Post from "./post"
+import { BlogProvider } from "./blog/blogContext";
 
 class MainContainer extends Component {
 
@@ -34,7 +35,11 @@ class MainContainer extends Component {
     res.push(middle)
     res.push(<Footer key="footer" />)
 
-    return <div>{res}</div>
+    return (
+      <BlogProvider>
+        <div>{res}</div>
+      </BlogProvider>
+    )
   }
 
   /**
