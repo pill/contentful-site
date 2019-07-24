@@ -7,7 +7,7 @@ const BlogProvider = (props) => {
     entry: null,
     entryList: [],
     page: 1,
-    section: null
+    totalPages: 1
   });
   return (
     <BlogContext.Provider value={[state, setState]}>

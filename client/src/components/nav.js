@@ -1,11 +1,17 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-export default () => {
+export default (props) => {
   return (
-    <div>
-      <a href="/blog">blog</a>
+    <div id="nav">
+      { ['blog'].includes(props.section)
+          ? <strong>blog</strong>
+          : <a href='/blog'>blog</a>
+      }
       &nbsp;
-      <a href="/work">work</a>
+      { ['work'].includes(props.section)
+          ? <strong>work</strong>
+          : <a href='/work'>work</a>
+      }
     </div>
   )
 }

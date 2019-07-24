@@ -30,7 +30,7 @@ export default function Post(props) {
               <div>
                 Tags:
                 {
-                  entry.fields.tags.map(tag => {
+                  entry.fields.tags && entry.fields.tags.map(tag => {
                     return <div key={tag.fields.slug}>{tag.fields.text}</div>
                   })
                 }
