@@ -26,10 +26,9 @@ npm run start
 
 [useContext](https://upmostly.com/tutorials/how-to-use-the-usecontext-hook-in-react)
 
+[Extract CSS](https://quantizd.com/webpack-4-extract-css-with-mini-css-extract-plugin/)
 
 ## Install Server
-
-_NOTE: server currently not used_
 
 ## run server
 

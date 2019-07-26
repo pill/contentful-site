@@ -1,5 +1,28 @@
-body{
+body {
   background-color :white;
   font-family: sans-serif;
+}
 
+h1 {
+  color: #333333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  &:link, &:visited {
+    color: #990099;
+  }
+  &:hover {
+    color: #660066;
+  }
+}
+
+#h-divider {
+  width: 80%;
+  border-bottom: 1px solid #ccc;
 }

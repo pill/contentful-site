@@ -28,7 +28,7 @@ export default function Post(props) {
               <div><em>by {entry.fields.author.fields.name}</em></div>
               <div><ReactMarkdown source={entry.fields.body} /></div>
               <div>
-                Tags:
+                { entry.fields.tags ? 'Tags:' : '' }
                 {
                   entry.fields.tags && entry.fields.tags.map(tag => {
                     return <div key={tag.fields.slug}>{tag.fields.text}</div>

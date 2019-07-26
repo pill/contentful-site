@@ -9,14 +9,12 @@ export default ({ totalPages, p, rpp }) => {
   console.log(totalPages, start, end)
 
   return (
-    <div>
-      <div>
-      {
-        range(start, end+1, 1).map(i => {
-          return <a href={`/blog?p=${i}&rpp=${rpp}`} key={i}>{i}</a>
-        })
-      }
-      </div>
+    <div id="paginator">
+    {
+      range(start, end+1, 1).map(i => {
+        return <a href={`/blog?p=${i}&rpp=${rpp}`} key={i}>{i}</a>
+      })
+    }
     </div>
   )
 }

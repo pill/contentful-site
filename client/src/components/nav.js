@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './nav.scss'
 
 export default (props) => {
   return (
@@ -12,6 +13,7 @@ export default (props) => {
           ? <strong>work</strong>
           : <a href='/work'>work</a>
       }
+    <div id="h-divider"></div>
     </div>
   )
 }

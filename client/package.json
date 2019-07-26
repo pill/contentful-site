@@ -5,13 +5,12 @@
   "description": "My Contentful powered site",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch",
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Phil Avery",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.5.0",
