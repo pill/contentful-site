@@ -7,6 +7,40 @@ import Post from "./post"
 import { BlogProvider } from "./blog/blogContext";
 import { parseUrl } from '../utils'
 
+import styled from 'styled-components'
+import palette from './palette'
+
+const Main = styled.div`
+
+  background-color :white;
+  font-family: sans-serif;
+
+
+  h1 {
+    color: $green;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    &:link, &:visited {
+      color: ${palette.sapphire};
+    }
+    &:hover {
+      color: ${palette.grey};
+    }
+  }
+
+  #h-divider {
+    width: 80%;
+    border-bottom: 1px solid #ccc;
+  }
+`
+
 class MainContainer extends Component {
 
   render() {
@@ -33,7 +67,7 @@ class MainContainer extends Component {
 
     return (
       <BlogProvider>
-        <div>{res}</div>
+        <Main>{res}</Main>
       </BlogProvider>
     )
   }
