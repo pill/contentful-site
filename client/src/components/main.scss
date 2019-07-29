@@ -1,10 +1,12 @@
+@import 'palette.scss';
+
 body {
   background-color :white;
   font-family: sans-serif;
 }
 
 h1 {
-  color: #333333;
+  color: $green;
 }
 
 ul {
@@ -15,10 +17,10 @@ ul {
 a {
   text-decoration: none;
   &:link, &:visited {
-    color: #990099;
+    color: $sapphire;
   }
   &:hover {
-    color: #660066;
+    color: $grey;
   }
 }
 

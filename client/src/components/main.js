@@ -7,8 +7,6 @@ import Post from "./post"
 import { BlogProvider } from "./blog/blogContext";
 import { parseUrl } from '../utils'
 
-import './main.scss'
-
 class MainContainer extends Component {
 
   render() {

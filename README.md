@@ -28,6 +28,10 @@ npm run start
 
 [Extract CSS](https://quantizd.com/webpack-4-extract-css-with-mini-css-extract-plugin/)
 
+[Color scheme generator](https://coolors.co/e56399-e5d4ce-de6e4b-7fd1b9-7a6563)
+
+[Styled Components](https://www.styled-components.com/docs/)
+
 ## Install Server
 
 ## run server

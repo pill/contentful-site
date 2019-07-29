@@ -1,9 +1,32 @@
 import React, { Component } from 'react'
-import './nav.scss'
+import styled from 'styled-components'
+import palette from './palette'
+
+const Nav = styled.div`
+  font-family: impact;
+  font-size: 30px;
+  color: ${palette.green};
+
+  a:visited {
+    color: ${palette.green};
+  }
+
+  a, strong {
+    margin-right: 5px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  strong {
+    text-decoration: underline;
+  }
+`
 
 export default (props) => {
   return (
-    <div id="nav">
+    <Nav>
       { ['blog'].includes(props.section)
           ? <strong>blog</strong>
           : <a href='/blog'>blog</a>
@@ -14,6 +37,6 @@ export default (props) => {
           : <a href='/work'>work</a>
       }
     <div id="h-divider"></div>
-    </div>
+    </Nav>
   )
 }
