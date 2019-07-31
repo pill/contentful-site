@@ -3,7 +3,23 @@ import client from "../../api"
 import useBlog from './useBlog'
 import Paginator from './paginator'
 
+import styled from 'styled-components'
+import palette from '../palette'
+
 export default function Blog({ searchParams }) {
+
+  const EntryList = styled.div`
+    li {
+      // border: 1px solid blue;
+      padding: 10px;
+      div {
+        display: inline-block;
+        img {
+          float: left;
+        }
+      }
+    }
+  `
 
   const { setState, entryList, totalPages } = useBlog()
 
@@ -31,8 +47,7 @@ export default function Blog({ searchParams }) {
   }, [])
 
   return (
-    <div>
-      <h1>Blog</h1>
+    <EntryList>
       {
         !entryList.length
           ? <em>Loading...</em>
@@ -40,13 +55,20 @@ export default function Blog({ searchParams }) {
               <ul>
                 {entryList.map(item => (
                   <li key={item.fields.slug}>
+                    <div>
+                    {
+                      item.fields.thumb
+                        ? <img src={item.fields.thumb.fields.file.url} />
+                        : ''
+                    }
                     <a href={'/post/'+item.sys.id}>{item.fields.title}</a>
+                    </div>
                   </li>
                 ))}
               </ul>
               <Paginator totalPages={totalPages} p={p} rpp={rpp}/>
             </div>
       }
-    </div>
+    </EntryList>
   )
 }

@@ -14,10 +14,6 @@ const useBlog = () => {
     setState(state => ({...state, page } ))
   }
 
-  function setEntryList(entryList) {
-    setState(state => ({ ...state, entryList }))
-  }
-
   function setEntry(entry) {
     setState(state => ({ ...state, entry }))
   }

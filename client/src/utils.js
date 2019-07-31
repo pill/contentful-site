@@ -13,10 +13,6 @@ const parseUrl = () => {
 
 /**
  * Mimic Python range function
- *
- * @param {*} start
- * @param {*} stop
- * @param {*} step
  */
 const range = (start, stop, step) => {
   if (typeof stop == 'undefined') {

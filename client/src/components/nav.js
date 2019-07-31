@@ -3,13 +3,11 @@ import styled from 'styled-components'
 import palette from './palette'
 
 const Nav = styled.div`
-  font-family: impact;
-  font-size: 30px;
-  color: ${palette.green};
+  @import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+  font-family: 'Teko', sans-serif;
 
-  a:visited {
-    color: ${palette.green};
-  }
+  font-size: 35px;
+  color: ${palette.green};
 
   a, strong {
     margin-right: 5px;
@@ -20,12 +18,13 @@ const Nav = styled.div`
   }
 
   strong {
-    text-decoration: underline;
+    border-bottom: 2px solid ${palette.pink}
   }
 `
 
 export default (props) => {
   return (
+    <div>
     <Nav>
       { ['blog'].includes(props.section)
           ? <strong>blog</strong>
@@ -36,7 +35,8 @@ export default (props) => {
           ? <strong>work</strong>
           : <a href='/work'>work</a>
       }
-    <div id="h-divider"></div>
     </Nav>
+    <div style={{paddingTop: '25px'}}></div>
+    </div>
   )
 }

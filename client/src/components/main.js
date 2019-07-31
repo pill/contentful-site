@@ -11,13 +11,14 @@ import styled from 'styled-components'
 import palette from './palette'
 
 const Main = styled.div`
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-  background-color :white;
+  background-color: white;
   font-family: sans-serif;
 
-
   h1 {
-    color: $green;
+    font-family: 'Roboto', sans-serif;
+    color: ${palette.sapphire};
   }
 
   ul {
@@ -28,16 +29,11 @@ const Main = styled.div`
   a {
     text-decoration: none;
     &:link, &:visited {
-      color: ${palette.sapphire};
+      color: ${palette.green};
     }
     &:hover {
-      color: ${palette.grey};
+      color: ${palette.pink};
     }
-  }
-
-  #h-divider {
-    width: 80%;
-    border-bottom: 1px solid #ccc;
   }
 `
 
