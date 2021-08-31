@@ -1,24 +1,36 @@
 import React, { Component } from "react"
-import ReactDOM from "react-dom"
 import Blog from "./blog"
 import Work from "./work"
 import Navigation from "./nav"
 import Post from "./post"
-import { BlogProvider } from "./blog/blogContext";
+import { BlogProvider } from "./blog/blogContext"
 import { parseUrl } from '../utils'
 
 import styled from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
+
 import palette from './palette'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${palette.background};
+  }
+
+  .main-site {
+    width: 500px;
+    margin: auto;
+  }
+`;
 
 const Main = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-  background-color: white;
   font-family: sans-serif;
+  color: ${palette.text};
 
   h1 {
     font-family: 'Roboto', sans-serif;
-    color: ${palette.sapphire};
+    color: ${palette.heading};
   }
 
   ul {
@@ -29,10 +41,10 @@ const Main = styled.div`
   a {
     text-decoration: none;
     &:link, &:visited {
-      color: ${palette.green};
+      color: ${palette.text};
     }
     &:hover {
-      color: ${palette.pink};
+      color: ${palette.text};
     }
   }
 `
@@ -44,8 +56,6 @@ class MainContainer extends Component {
     const {parts, searchParams} = parseUrl()
     const section = parts.length > 0 ? parts[0] : ''
     const postId = parts[1]
-
-    res.push(<Navigation key="nav" section={section} />)
 
     let middle = null
     switch(section) {
@@ -62,8 +72,13 @@ class MainContainer extends Component {
     res.push(middle)
 
     return (
+
       <BlogProvider>
-        <Main>{res}</Main>
+        <GlobalStyle />
+        <Main>
+          <Navigation key="nav" section={section} />
+          <div class="main-site">{res}</div>
+        </Main>
       </BlogProvider>
     )
   }

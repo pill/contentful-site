@@ -10,12 +10,13 @@ export default function Blog({ searchParams }) {
 
   const EntryList = styled.div`
     li {
-      // border: 1px solid blue;
       padding: 10px;
       div {
         display: inline-block;
         img {
           float: left;
+          border: 1px solid #ddd;
+          margin: 5px 5px 10px 5px;
         }
       }
     }
@@ -56,12 +57,16 @@ export default function Blog({ searchParams }) {
                 {entryList.map(item => (
                   <li key={item.fields.slug}>
                     <div>
-                    {
-                      item.fields.thumb
-                        ? <img src={item.fields.thumb.fields.file.url} />
-                        : ''
-                    }
-                    <a href={'/post/'+item.sys.id}>{item.fields.title}</a>
+                    <a href={'/post/'+item.sys.id}>
+                      <h1>{item.fields.title}</h1>
+                      {
+                        item.fields.thumb
+                          ? <img
+                              src={item.fields.thumb.fields.file.url}
+                              width="500px" />
+                          : ''
+                      }
+                    </a>
                     </div>
                   </li>
                 ))}

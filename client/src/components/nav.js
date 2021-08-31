@@ -7,10 +7,10 @@ const Nav = styled.div`
   font-family: 'Teko', sans-serif;
 
   font-size: 35px;
-  color: ${palette.green};
+  color: ${palette.nav};
 
   a, strong {
-    margin-right: 5px;
+    margin-right: 20px;
   }
 
   a {
@@ -18,25 +18,29 @@ const Nav = styled.div`
   }
 
   strong {
-    border-bottom: 2px solid ${palette.pink}
+    border-bottom: 2px solid ${palette.text}
+  }
+
+  #main-nav {
+    width: 700px;
+    margin: auto;
   }
 `
 
 export default (props) => {
   return (
-    <div>
     <Nav>
+      <div id="main-nav">
+      { ['home'].includes(props.section)
+          ? <strong>home</strong>
+          : <a href='/'>.</a>
+      }
       { ['blog'].includes(props.section)
           ? <strong>blog</strong>
           : <a href='/blog'>blog</a>
       }
-      &nbsp;
-      { ['work'].includes(props.section)
-          ? <strong>work</strong>
-          : <a href='/work'>work</a>
-      }
+      </div>
     </Nav>
-    <div style={{paddingTop: '25px'}}></div>
-    </div>
+
   )
 }
