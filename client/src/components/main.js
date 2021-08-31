@@ -15,9 +15,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${palette.background};
   }
-
   .main-site {
-    width: 500px;
+    width: 560px;
     margin: auto;
   }
 `;
