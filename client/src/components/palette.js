@@ -14,6 +14,7 @@ export default {
   heading: '#ffffff',
   text: '#e1e5f2',
   nav: '#bfdbf7',
-  subHeading: '#bfdbf7'
+  subHeading: '#bfdbf7',
+  imageBorder: '#ffffff'
 }
 
