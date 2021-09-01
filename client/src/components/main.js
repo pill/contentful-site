@@ -3,6 +3,7 @@ import Blog from "./blog"
 import Work from "./work"
 import Navigation from "./nav"
 import Post from "./post"
+import Home from "./home"
 import { BlogProvider } from "./blog/blogContext"
 import { parseUrl } from '../utils'
 
@@ -65,8 +66,10 @@ class MainContainer extends Component {
         middle = <Post key="post" id={postId} />
         break
       case 'blog':
-      default:
         middle = <Blog key="blog" searchParams={searchParams} />
+        break;
+      default:
+        middle = <Home key="home" />
     }
     res.push(middle)
 

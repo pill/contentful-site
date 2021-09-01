@@ -9,14 +9,16 @@ import palette from '../palette'
 export default function Blog({ searchParams }) {
 
   const EntryList = styled.div`
+    #entry-container {
+    }
+
     li {
-      padding: 10px;
       div {
         display: inline-block;
         img {
           float: left;
-          border: 1px solid #ddd;
-          margin: 5px 5px 10px 5px;
+          border: 1px solid ${palette.imageBorder};
+          margin: 5px 0 10px 0;
         }
       }
     }
@@ -52,7 +54,7 @@ export default function Blog({ searchParams }) {
       {
         !entryList.length
           ? <em>Loading...</em>
-          : <div>
+          : <div id="entry-container">
               <ul>
                 {entryList.map(item => (
                   <li key={item.fields.slug}>
@@ -63,7 +65,7 @@ export default function Blog({ searchParams }) {
                         item.fields.thumb
                           ? <img
                               src={item.fields.thumb.fields.file.url}
-                              width="500px" />
+                              width="560px" />
                           : ''
                       }
                     </a>

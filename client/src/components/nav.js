@@ -35,9 +35,11 @@ const Nav = styled.div`
     border-right: 1px solid ${palette.imageBorder };
     margin: 17px 15px 0 10px;
   }
+
   #phil-avery {
     margin-bottom: 10px;
   }
+
   #below-phil {
     font-size: 12px;
     line-height: 20px;
@@ -56,11 +58,15 @@ export default (props) => {
           <br/><a href="https://www.instagram.com/pill_moto/">@pill_moto</a>
         </div>
       </div>
+
       <div id="main-nav">
+        { [''].includes(props.section)
+            ? <strong>.</strong>
+            : <a href="/">.</a> }
+
         { ['blog'].includes(props.section)
             ? <strong>blog</strong>
-            : <a href='/blog'>blog</a>
-        }
+            : <a href='/blog'>blog</a> }
       </div>
     </Nav>
 

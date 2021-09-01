@@ -28,7 +28,7 @@ export default function Post(props) {
       margin-bottom: 10px;
       color: ${palette.subHeading};
     }
-  `;
+  `
 
   const { entry, setEntry } = useBlog()
 
