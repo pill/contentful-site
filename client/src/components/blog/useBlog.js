@@ -29,4 +29,4 @@ const useBlog = () => {
   }
 }
 
-export default useBlog;
+export default useBlog

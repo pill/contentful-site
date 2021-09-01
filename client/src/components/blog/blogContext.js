@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-const BlogContext = React.createContext([{}, () => {}]);
+const BlogContext = React.createContext([{}, () => {}])
 
 const BlogProvider = (props) => {
   const [state, setState] = useState({
@@ -16,4 +16,4 @@ const BlogProvider = (props) => {
   );
 }
 
-export { BlogContext, BlogProvider };
+export { BlogContext, BlogProvider }
