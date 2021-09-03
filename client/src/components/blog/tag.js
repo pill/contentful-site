@@ -25,8 +25,7 @@ export default function Tag({ id, searchParams }) {
   `
 
   const SelectedTag = styled.div`
-
-
+    @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
     font-size: 20px;
 
     #selected-tag-container {
@@ -38,8 +37,6 @@ export default function Tag({ id, searchParams }) {
     }
 
     #selected-tag-container .tag {
-      @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
-
       font-family: "Bebas Neue";
 
       font-size: 64px;
