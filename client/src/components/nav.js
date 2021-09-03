@@ -32,7 +32,7 @@ const Nav = styled.div`
     font-size: 17px;
     line-height: 25px;
     float: left;
-    border-right: 1px solid ${palette.imageBorder };
+    border-right: 1px solid ${palette.imageBorder};
     margin: 17px 15px 0 10px;
   }
 
@@ -64,7 +64,7 @@ export default (props) => {
             ? <strong>.</strong>
             : <a href="/">.</a> }
 
-        { ['blog'].includes(props.section)
+        { ['blog', 'tags', 'post'].includes(props.section)
             ? <strong>blog</strong>
             : <a href='/blog'>blog</a> }
       </div>

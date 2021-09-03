@@ -1,8 +1,9 @@
 import React, { Component } from "react"
-import Blog from "./blog"
 import Work from "./work"
 import Navigation from "./nav"
-import Post from "./post"
+import Blog from "./blog"
+import Post from "./blog/post"
+import Tag from "./blog/tag"
 import Home from "./home"
 import { BlogProvider } from "./blog/blogContext"
 import { parseUrl } from '../utils'
@@ -55,7 +56,7 @@ class MainContainer extends Component {
     let res = []
     const {parts, searchParams} = parseUrl()
     const section = parts.length > 0 ? parts[0] : ''
-    const postId = parts[1]
+    const tagOrPostId = parts[1]
 
     let middle = null
     switch(section) {
@@ -63,10 +64,13 @@ class MainContainer extends Component {
         middle = <Work key="work"/>
         break
       case 'post':
-        middle = <Post key="post" id={postId} />
+        middle = <Post key="post" id={tagOrPostId} />
         break
       case 'blog':
         middle = <Blog key="blog" searchParams={searchParams} />
+        break;
+      case 'tags':
+        middle = <Tag key="tag" id={tagOrPostId} searchParams={searchParams} />
         break;
       default:
         middle = <Home key="home" />
