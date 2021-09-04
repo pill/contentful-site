@@ -18,10 +18,14 @@ export default function Post(props) {
       margin-bottom: 10px;
     }
 
+    #post-container {
+      margin-top: 20px;
+    }
+
     #post-body {
       font-family: georgia;
       line-height: 25px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     #post-body ul {
@@ -30,23 +34,24 @@ export default function Post(props) {
 
     #tag-label {
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       color: ${palette.subHeading};
     }
 
     .tag {
-      font-size: 12px;
+      font-size: 13px;
       background: ${palette.background};
-      border:1px solid #ccc;
+      border:1px solid ${palette.imageBorder};
       border-radius:5px;
       text-decoration:none;
-      padding:3px;
+      padding:8px;
       margin:3px;
       text-transform:uppercase;
     }
 
     .tag:hover {
-      color: ${palette.subheading};
+      color: ${palette.background};
+      background: ${palette.subHeading};
     }
   `
 
@@ -63,10 +68,10 @@ export default function Post(props) {
 
   return (
     <BlogPost>
-    <div>
+    <div id="post-container">
       {
         !entry
-          ? <em>Loading...</em>
+          ? <div class="loading"><em>Loading...</em></div>
           : <div>
               <h1>{entry.fields.title}</h1>
               <div id="date">{moment(entry.sys.createdAt).format('MMMM Do YYYY, h:mm a')}</div>

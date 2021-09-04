@@ -22,6 +22,10 @@ const Nav = styled.div`
     border-bottom: 2px solid ${palette.nav}
   }
 
+  #nav-container {
+    margin-bottom: 50px;
+  }
+
   #main-nav {
     width: 720px;
     margin: auto;
@@ -49,24 +53,26 @@ const Nav = styled.div`
 export default (props) => {
   return (
     <Nav>
-      <div id="left-nav">
-        <div id='phil-avery'>Phil Avery</div>
-        <div id="below-phil">
-          <a href="https://www.linkedin.com/in/phillipavery/">linked in</a>
-          <br/><a href="https://github.com/pill">github</a>
-          <br/><a href="https://www.instagram.com/classique_phil/">@classique_phil</a>
-          <br/><a href="https://www.instagram.com/pill_moto/">@pill_moto</a>
+      <div id="nav-container">
+        <div id="left-nav">
+          <div id='phil-avery'>Phil Avery</div>
+          <div id="below-phil">
+            <a href="https://www.linkedin.com/in/phillipavery/">LinkedIn</a>
+            <br/><a href="https://github.com/pill">Github</a>
+            <br/><a href="https://www.instagram.com/classique_phil/">@classique_phil</a>
+            <br/><a href="https://www.instagram.com/pill_moto/">@pill_moto</a>
+          </div>
         </div>
-      </div>
 
-      <div id="main-nav">
-        { [''].includes(props.section)
-            ? <strong>.</strong>
-            : <a href="/">.</a> }
+        <div id="main-nav">
+          { [''].includes(props.section)
+              ? <strong>home</strong>
+              : <a href="/">home</a> }
 
-        { ['blog', 'tags', 'post'].includes(props.section)
-            ? <strong>blog</strong>
-            : <a href='/blog'>blog</a> }
+          { ['blog', 'tags', 'post'].includes(props.section)
+              ? <strong>blog</strong>
+              : <a href='/blog'>blog</a> }
+        </div>
       </div>
     </Nav>
 

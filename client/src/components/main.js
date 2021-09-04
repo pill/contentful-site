@@ -48,6 +48,10 @@ const Main = styled.div`
       color: ${palette.text};
     }
   }
+
+  .loading {
+    margin-top: 50px;
+  }
 `
 
 class MainContainer extends Component {

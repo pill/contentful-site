@@ -32,6 +32,7 @@ npm run start
 
 [Styled Components](https://www.styled-components.com/docs/)
 
+[Google Fonts](https://fonts.google.com/)
 ## Install Server
 
 ## run server
