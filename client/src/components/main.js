@@ -72,10 +72,10 @@ class MainContainer extends Component {
         break
       case 'blog':
         middle = <Blog key="blog" searchParams={searchParams} />
-        break;
+        break
       case 'tags':
         middle = <Tag key="tag" id={tagOrPostId} searchParams={searchParams} />
-        break;
+        break
       default:
         middle = <Home key="home" />
     }

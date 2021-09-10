@@ -24,29 +24,28 @@ const Nav = styled.div`
 
   #nav-container {
     margin-bottom: 50px;
-  }
+    #main-nav {
+      width: 720px;
+      margin: auto;
+    }
 
-  #main-nav {
-    width: 720px;
-    margin: auto;
-  }
+    #left-nav {
+      #phil-avery {
+        margin-bottom: 10px;
+      }
 
-  #left-nav {
-    font-family: 'Azeret Mono';
-    font-size: 17px;
-    line-height: 25px;
-    float: left;
-    border-right: 1px solid ${palette.imageBorder};
-    margin: 17px 15px 0 10px;
-  }
+      #below-phil {
+        font-size: 12px;
+        line-height: 20px;
+      }
 
-  #phil-avery {
-    margin-bottom: 10px;
-  }
-
-  #below-phil {
-    font-size: 12px;
-    line-height: 20px;
+      font-family: 'Azeret Mono';
+      font-size: 17px;
+      line-height: 25px;
+      float: left;
+      border-right: 1px solid ${palette.imageBorder};
+      margin: 17px 15px 0 10px;
+    }
   }
 `
 

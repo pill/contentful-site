@@ -10,12 +10,12 @@ export default function Home() {
       width: 560px;
       color: ${palette.text};
       text-align: center;
-    }
 
-    #home-container img {
-      border: 2px solid ${palette.imageBorder};
-      width: 560px;
-      margin-bottom: 15px;
+      img {
+        border: 2px solid ${palette.imageBorder};
+        width: 560px;
+        margin-bottom: 15px;
+      }
     }
   `
 
@@ -28,5 +28,5 @@ export default function Home() {
         </div>
       </div>
     </HomePage>
-  );
+  )
 }

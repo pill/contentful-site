@@ -19,17 +19,17 @@ export default function Post(props) {
     }
 
     #post-container {
-      margin-top: 20px;
-    }
+      margin: 20px 0 20px 0;
 
-    #post-body {
-      font-family: georgia;
-      line-height: 25px;
-      margin-bottom: 25px;
-    }
+      #post-body {
+        font-family: georgia;
+        line-height: 25px;
+        margin-bottom: 25px;
 
-    #post-body ul {
-      list-style-type: circle;
+        ul {
+          list-style-type: circle;
+        }
+      }
     }
 
     #tag-label {

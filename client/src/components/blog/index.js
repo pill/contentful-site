@@ -17,7 +17,7 @@ export default function Blog({ searchParams }) {
         display: inline-block;
         img {
           float: left;
-          border: 1px solid ${palette.imageBorder};
+          border: 2px solid ${palette.imageBorder};
           margin: 5px 0 10px 0;
         }
       }

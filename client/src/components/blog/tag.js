@@ -17,7 +17,7 @@ export default function Tag({ id, searchParams }) {
         display: inline-block;
         img {
           float: left;
-          border: 1px solid ${palette.imageBorder};
+          border: 2px solid ${palette.imageBorder};
           margin: 5px 0 10px 0;
         }
       }
@@ -34,16 +34,16 @@ export default function Tag({ id, searchParams }) {
       margin-top: 50px;
       padding-bottom: 15px;
       border-bottom: 1px dotted ${palette.imageBorder};
-    }
 
-    #selected-tag-container .tag {
-      font-family: "Bebas Neue";
+      .tag {
+        font-family: "Bebas Neue";
 
-      font-size: 64px;
-      color: ${palette.subHeading};
-      background: ${palette.background};
-      text-transform: uppercase;
-      margin-right: 10px;
+        font-size: 64px;
+        color: ${palette.subHeading};
+        background: ${palette.background};
+        text-transform: uppercase;
+        margin-right: 10px;
+      }
     }
   `
 
