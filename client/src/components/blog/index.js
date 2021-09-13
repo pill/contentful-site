@@ -1,24 +1,39 @@
 import React, { useEffect }  from "react"
-import client from "../../api"
-import useBlog from './useBlog'
-import Paginator from './paginator'
 
-import styled from 'styled-components'
+import Paginator from './paginator'
+import client from "../../api"
+import moment from 'moment'
 import palette from '../palette'
+import styled from 'styled-components'
+import useBlog from './useBlog'
 
 export default function Blog({ searchParams }) {
 
   const EntryList = styled.div`
     #entry-container {
-    }
+      li {
+        div {
+          display: inline-block;
 
-    li {
-      div {
-        display: inline-block;
-        img {
-          float: left;
-          border: 2px solid ${palette.imageBorder};
-          margin: 5px 0 10px 0;
+          h1 {
+            margin-bottom: 5px;
+          }
+
+          img {
+            float: left;
+            border: 2px solid ${palette.imageBorder};
+            margin: 5px 0 15px 0;
+          }
+
+          .date {
+            font-family: arial
+            font-size: 15px;
+            font-weight: bold;
+            color: ${palette.subHeading};
+            line-height: 30px;
+            margin-bottom: 10px;
+          }
+
         }
       }
     }
@@ -59,16 +74,17 @@ export default function Blog({ searchParams }) {
                 {entryList.map(item => (
                   <li key={item.fields.slug}>
                     <div>
-                    <a href={'/post/'+item.sys.id}>
-                      <h1>{item.fields.title}</h1>
-                      {
-                        item.fields.thumb
-                          ? <img
-                              src={item.fields.thumb.fields.file.url}
-                              width="560px" />
-                          : ''
-                      }
-                    </a>
+                      <a href={'/post/'+item.sys.id}>
+                        <h1>{item.fields.title}</h1>
+                        <div class="date">{moment(item.sys.createdAt).format('MMMM Do YYYY, h:mm a')}</div>
+                        {
+                          item.fields.thumb
+                            ? <img
+                                src={item.fields.thumb.fields.file.url}
+                                width="560px" />
+                            : ''
+                        }
+                      </a>
                     </div>
                   </li>
                 ))}

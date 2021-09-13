@@ -10,15 +10,14 @@ export default function Tag({ id, searchParams }) {
 
   const EntryList = styled.div`
     #entry-container {
-    }
-
-    li {
-      div {
-        display: inline-block;
-        img {
-          float: left;
-          border: 2px solid ${palette.imageBorder};
-          margin: 5px 0 10px 0;
+      li {
+        div {
+          display: inline-block;
+          img {
+            float: left;
+            border: 2px solid ${palette.imageBorder};
+            margin: 5px 0 10px 0;
+          }
         }
       }
     }

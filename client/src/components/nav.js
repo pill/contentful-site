@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+
 import palette from './palette'
+import styled from 'styled-components'
 
 const Nav = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
@@ -10,19 +11,20 @@ const Nav = styled.div`
   font-size: 35px;
   color: ${palette.nav};
 
-  a, strong {
-    margin-right: 20px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  strong {
-    border-bottom: 2px solid ${palette.nav}
-  }
-
   #nav-container {
+    a, strong {
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .selected {
+      color: ${palette.nav};
+      border-bottom: 2px solid ${palette.nav}
+    }
+
     margin-bottom: 50px;
     #main-nav {
       width: 720px;
@@ -64,13 +66,10 @@ export default (props) => {
         </div>
 
         <div id="main-nav">
-          { [''].includes(props.section)
-              ? <strong>home</strong>
-              : <a href="/">home</a> }
-
-          { ['blog', 'tags', 'post'].includes(props.section)
-              ? <strong>blog</strong>
-              : <a href='/blog'>blog</a> }
+              <a class={ [''].includes(props.section) ? 'selected' : ''}
+                 href="/">home</a>
+              <a class={['blog', 'tags', 'post'].includes(props.section) ? 'selected' : ''}
+                 href='/blog'>blog</a>
         </div>
       </div>
     </Nav>

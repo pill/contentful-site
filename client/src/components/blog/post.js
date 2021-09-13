@@ -1,25 +1,30 @@
-import React, {useEffect, useState, useContext}  from 'react'
-import client from '../../api'
-import * as moment from 'moment'
-import useBlog from './useBlog'
+import React, {useEffect}  from 'react'
+
 import ReactMarkdown from 'react-markdown'
-import styled from 'styled-components'
+import client from '../../api'
+import moment from 'moment'
 import palette from '../palette'
+import styled from 'styled-components'
+import useBlog from './useBlog'
 
 export default function Post(props) {
 
   const BlogPost = styled.div`
-    #date {
-      font-family: arial
-      font-size: 15px;
-      font-weight: bold;
-      color: ${palette.subHeading};
-      line-height: 30px;
-      margin-bottom: 10px;
-    }
-
     #post-container {
       margin: 20px 0 20px 0;
+
+      h1 {
+        margin-bottom: 5px;
+      }
+
+      #date {
+        font-family: arial
+        font-size: 15px;
+        font-weight: bold;
+        color: ${palette.subHeading};
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
 
       #post-body {
         font-family: georgia;
@@ -30,28 +35,28 @@ export default function Post(props) {
           list-style-type: circle;
         }
       }
-    }
 
-    #tag-label {
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: ${palette.subHeading};
-    }
+      #tag-label {
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: ${palette.subHeading};
+      }
 
-    .tag {
-      font-size: 13px;
-      background: ${palette.background};
-      border:1px solid ${palette.imageBorder};
-      border-radius:5px;
-      text-decoration:none;
-      padding:8px;
-      margin:3px;
-      text-transform:uppercase;
-    }
+      .tag {
+        font-size: 13px;
+        background: ${palette.background};
+        border:1px solid ${palette.imageBorder};
+        border-radius:5px;
+        text-decoration:none;
+        padding:8px;
+        margin:3px;
+        text-transform:uppercase;
+      }
 
-    .tag:hover {
-      color: ${palette.background};
-      background: ${palette.subHeading};
+      .tag:hover {
+        color: ${palette.background};
+        background: ${palette.subHeading};
+      }
     }
   `
 
